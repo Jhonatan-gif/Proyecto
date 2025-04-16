@@ -8,6 +8,7 @@ namespace Proyecto.Controllers
     {
         public IActionResult List()
         {
+
             EquipoRepository repository = new EquipoRepository();
             var equipos = repository.DevuelveListadoEquipo();
             return View(equipos);
