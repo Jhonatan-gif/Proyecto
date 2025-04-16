@@ -12,7 +12,7 @@ namespace Proyecto.Models
         [MaxLength(100)]
         [DisplayName("Ingrese el nombre")]
 
-        public string Nombre { get; set; }
+        public String Nombre { get; set; }
         [Range(0, 20)]
         public int PartidosJugados { get; set; }
         [Range(0, 20)]
@@ -22,8 +22,12 @@ namespace Proyecto.Models
         [Range(0, 20)]
         public int PartidosPerdidos { get; set; }
 
-        public int TotalPuntos { get; set; }
-
-
+        public int TotalPuntos{
+            get
+            {
+                int total_puntos = PartidosGanados * 3 + PartidosEmpatados;
+                return total_puntos;
+            }
+        }
     }
 }
